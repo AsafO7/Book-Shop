@@ -1,0 +1,42 @@
+.create-book-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-book-btn {
+    background-color: transparent;
+    color: #68baf9;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* .create-book-btn {
+    margin-left: 2.5rem;
+    margin-right: 0;
+} */
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.book-form label {
+    font-size: 1em;
+}
+
+.book-form input {
+    height: 35px;
+    margin: 0.5rem 2.7rem 0.5rem 0;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 250px;
+}
+
+.submit-book-btn {
+    margin: 1rem 0;
+}
+

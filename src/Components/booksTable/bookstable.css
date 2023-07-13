@@ -1,0 +1,126 @@
+
+
+.books-table {
+    border: 1px solid black;
+    margin: 1rem;
+    border-collapse: collapse;
+    max-width: 1000px;
+}
+
+.books-table th {
+    border: 2px solid gray;
+    padding: 8px;
+    text-align: left;
+}
+
+.odd-row {
+    background-color: rgb(235, 235, 235);
+}
+
+.books-table thead tr :last-child {
+    border: none;
+}
+
+.books-table td {
+    border: 2px solid gray;
+    padding: 8px;
+    text-align: left;
+}
+
+.main-h1 {
+    margin: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.read-btn, .update-btn, .delete-btn, .submit-book-btn {
+    align-self: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+}
+
+.read-btn, .submit-book-btn {
+    background-image: linear-gradient(#42a1ec,#0070c9);
+    border: 1px solid #07c;
+}
+
+.update-btn {
+    background-image: linear-gradient(#f5b761,#e09935);
+    border: 1px solid #e6a54b;
+}
+
+.delete-btn {
+    background-image: linear-gradient(#d9534f,#c14a46);
+    border: 1px solid #c64c48;
+}
+
+.read-btn, .update-btn, .delete-btn {
+    margin-right: 8px;
+}
+
+.expand-btn {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    .table-book-title {
+        /* width: 300px; */
+        --max-lines: 3;
+        --line-height: 1.4;
+        overflow: hidden;
+        max-height: calc(var(--max-lines) * 1em * var(--line-height));
+        line-height: var(--line-height);
+        position: relative;
+    }
+    
+    .table-book-title:has(+ .expand-btn:not(:checked)):before {
+        content: "";
+        position: absolute;
+        height: calc((2em * var(--line-height)));
+        width: 100%;
+        bottom: 0;
+        pointer-events: none;
+        /* background: linear-gradient(to bottom, transparent, white); */
+    }
+    
+    .expand-btn {
+        display: initial;
+        appearance: none;
+        /* border: 1px solid black; */
+        color: #42a1ec;
+        padding: .5em;
+        border-radius: .25em;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+    
+    .expand-btn::before {
+        content: "Expand";
+    }
+    
+    .expand-btn:checked::before {
+        content: "Collapse";
+    }
+    
+    .table-book-title:has(+ .expand-btn:checked) {
+        max-height: none;
+    }
+}
+
+@media screen and (max-width: 635px) {
+    .books-table, .read-btn, .update-btn, .delete-btn {
+        font-size: 0.75rem;
+    }
+    .read-btn, .update-btn, .delete-btn {
+        padding: 3px 10px;
+    }
+}
